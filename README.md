@@ -19,17 +19,17 @@ Step 1. Download CSV from the Amazon Mechanical Turk Website
 
 Step 2. (Optional but recommended) Rename the file in this format. 
 
-						Format:	amturk_(the nth round)_(type).csv
+		Format:	amturk_(the nth round)_(type).csv
 
-						Example: amturk_5_raw.csv, amturk_2_rejected.csv, amturk_1_approved.csv, amturk_6_all.csv
+		Example: amturk_5_raw.csv, amturk_2_rejected.csv, amturk_1_approved.csv, amturk_6_all.csv
 
-						note: since this is the raw file from the Amazon Mechanical Turk website, name it as amturk_(n)_raw.csv
+		note: since this is the raw file from the Amazon Mechanical Turk website, name it as amturk_(n)_raw.csv
 
 Step 3. (Optional but recommended) Place the file in the following directory:  
 
-						imageprep\categories\(category)\results
+		imageprep\categories\(category)\results
 
-						note: (category) can be 'babycoat' or 'hat' or 'babyshirt' etc.
+		note: (category) can be 'babycoat' or 'hat' or 'babyshirt' etc.
 
 Step 4. Open Command Prompt and navigate to the folder imageprep
 
@@ -64,7 +64,5 @@ Step 10. At the last image, a 'STOP' will be shown to indicate to you that all t
 Step 11. Click 'Download CSV' to get the .csv file.
 
 Step 12. Upload the .csv file onto Amazon Mechanical Turk to have the 'Rejected' results fed back onto the website for another round. 
-
-Step 13. Kill Matthew.
 
 
