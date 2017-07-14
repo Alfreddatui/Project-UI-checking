@@ -67,3 +67,25 @@ Step 11. Click 'Download CSV' to get the .csv file.
 Step 12. Upload the .csv file onto Amazon Mechanical Turk to have the 'Rejected' results fed back onto the website for another round. 
 
 
+
+
+Part 3: (Optional): Cropping the Images
+---------------------------------------
+
+Step 13: Go to imageprep/categories/(category) and create a folder called cropped_(n)_(type)
+	In this case, it is cropped_5_submitted. The cropped images of the 5th round of checking that is submitted.
+
+Step 14: Go to imageprep and open image_crop.py in a Python editor and make the following edits.
+
+	fpath = '/Users/(name)/Desktop/imageprep/categories/babycoat/pictures'
+	csvpath = '/Users/(name)/Desktop/imageprep/categories/babycoat/results/amturk_5_raw.csv' 
+	savepath = '/Users/(name)/Desktop/imageprep/categories/babycoat/cropped_5_submitted/'
+
+Step 15: Open command prompt and run the Python file. 
+
+
+
+
+
+
+
