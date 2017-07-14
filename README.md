@@ -65,4 +65,6 @@ Step 11. Click 'Download CSV' to get the .csv file.
 
 Step 12. Upload the .csv file onto Amazon Mechanical Turk to have the 'Rejected' results fed back onto the website for another round. 
 
+Step 13. Kill Matthew.
+
 
