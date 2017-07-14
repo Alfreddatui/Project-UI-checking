@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Checking Amazon Mechanical Turk</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="script/javascript.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+
+<body>
+
+<div class="mainbox">
+	<header class="header">
+		<h1>Image Checking For Classification</h1>
+	</header>
+
+	<div class="project">
+		<div id="images">
+			<img src="" id="previewimage">
+			<img id="bbox">
+		</div>	
+
+		<div id="buttonspace">
+			<div id="inputfile">
+				<p>Please choose your txt input file:</p>
+				<input type="file" id="fileInput" onchange="handleFiles(this.files)">
+			</div>
+			<p>Labelled : <span id="category"></span> </p>
+			<p>
+				<button onclick="acceptButton()" id="buttonaccept" class="btn btn-primary">Accept</button>
+				<button onclick="declineButton()" id="buttondecline" class="btn btn-primary">Decline</button>
+			</p>
+			<p>
+				<button onclick="backButton()" id="buttonback" class="btn btn-primary">Back</button>
+				<button onclick="csvButton()" id="buttonCSV" class="btn btn-primary">Download CSV</button>
+			</p>
+		</div>	
+	</div>
+
+	<div id='dvCSV'></div>
+</div>
+
+</body>
+</html>
