@@ -19,11 +19,11 @@ Step 1. Download CSV from the Amazon Mechanical Turk Website
 
 Step 2. (Optional but recommended) Rename the file in this format. 
 
-		Format:	amturk_(the nth round)_(type).csv
+															Format:	amturk_(the nth round)_(type).csv
 
-		Example: amturk_5_raw.csv, amturk_2_rejected.csv, amturk_1_approved.csv, amturk_6_all.csv
+															Example: amturk_5_raw.csv, amturk_2_rejected.csv, amturk_1_approved.csv, amturk_6_all.csv
 
-		note: since this is the raw file from the Amazon Mechanical Turk website, name it as amturk_(n)_raw.csv
+															note: since this is the raw file from the Amazon Mechanical Turk website, name it as amturk_(n)_raw.csv
 
 Step 3. (Optional but recommended) Place the file in the following directory:  
 
