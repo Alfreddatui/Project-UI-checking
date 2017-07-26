@@ -16,6 +16,22 @@ var datahit = {
 //To keep track the index of the HIT
 var count = 1;
 
+
+document.addEventListener('keydown', function(event) {
+    if(event.keyCode == 37) {
+        acceptButton();
+        console.log("Accepting");
+    }
+    else if(event.keyCode == 39) {
+        declineButton();
+        console.log("Declining");
+    }
+    else if(event.keyCode == 8) {
+        backButton();
+        console.log("Going back");
+    }
+});
+
 ////////////////////////////////////////All the buttons////////////////////////////////////////////////////////////////////////////
 function acceptButton() {
   if (count >= datahit.HITId.length-1) {
