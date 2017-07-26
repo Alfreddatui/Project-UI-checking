@@ -25,10 +25,12 @@ function acceptButton() {
     document.getElementById('bbox').style.top = datahit.y1[count]+"px";
     document.getElementById('bbox').style.width = datahit.width[count] + "px";
     document.getElementById('bbox').style.height = datahit.height[count] + "px";
+    document.getElementById('number').innerHTML = count+1;
     datahit.Approve[count]='x';
     datahit.Reject[count]='';
   } else {
     count+=1;
+    document.getElementById('number').innerHTML = count;  
     document.getElementById('previewimage').src = datahit.destinID[count];
     document.getElementById('category').innerHTML = datahit.label[count];
     document.getElementById('bbox').style.left = datahit.x1[count]+"px";
@@ -50,10 +52,12 @@ function declineButton() {
     document.getElementById('bbox').style.top = datahit.y1[count]+"px";
     document.getElementById('bbox').style.width = datahit.width[count] + "px";
     document.getElementById('bbox').style.height = datahit.height[count] + "px";
+    document.getElementById('number').innerHTML = count+1;
     datahit.Reject[count]='The bounding box(es) that you have drawn do not adhere to our criteria. The bounding box(es) are either trucanted, drawn on objects that are incorrectly orientated(meaning the clothing articles may be folded or not facing the front), or labelled with the wrong category. Label the bounding boxes as "NotIncluded" if you are unsure of which category the clothing article belongs to, or the clothing article is folded or is not squarely facing the front(we still check the result)';
     datahit.Approve[count]='';
   } else {
     count+=1;
+    document.getElementById('number').innerHTML = count; 
     document.getElementById('previewimage').src = datahit.destinID[count];
     document.getElementById('category').innerHTML = datahit.label[count];
     document.getElementById('bbox').style.left = datahit.x1[count]+"px";
@@ -76,6 +80,7 @@ function backButton() {
     document.getElementById('bbox').style.height = datahit.height[count] + "px";
   } else {
     count-=1;
+    document.getElementById('number').innerHTML = count; 
     document.getElementById('previewimage').src = datahit.destinID[count];
     document.getElementById('category').innerHTML = datahit.label[count];
     document.getElementById('bbox').style.left = datahit.x1[count]+"px";
@@ -193,6 +198,8 @@ function listoflines(l_array) {
     document.getElementById('bbox').style.top = datahit.y1[count]+"px";
     document.getElementById('bbox').style.width = datahit.width[count]+"px";
     document.getElementById('bbox').style.height = datahit.height[count]+"px";
+    document.getElementById('number').innerHTML = count;
+    document.getElementById('totals').innerHTML =  datahit.HITId.length;  
     console.log(datahit.Approve)
 }//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

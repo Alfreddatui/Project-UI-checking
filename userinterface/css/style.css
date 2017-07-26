@@ -65,7 +65,7 @@ button {
 	z-index: 3;
 	position: relative;
 	height: 200px;
-	border: 5px dashed black;
+	border: 2px dashed black;
 	left: 150px;
 	top:200px;
 }
