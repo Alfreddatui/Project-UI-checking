@@ -16,19 +16,24 @@ var datahit = {
 //To keep track the index of the HIT
 var count = 1;
 
-
+///////////////////////////////////////////Additional Feature/////////////////////////////////////////////
 document.addEventListener('keydown', function(event) {
-    if(event.keyCode == 37) {
+    if(event.keyCode == 13) {
         acceptButton();
         console.log("Accepting");
     }
-    else if(event.keyCode == 39) {
+    else if(event.keyCode == 46) {
         declineButton();
         console.log("Declining");
     }
-    else if(event.keyCode == 8) {
+    else if(event.keyCode == 37) {
         backButton();
         console.log("Going back");
+    }
+
+    else if(event.keyCode == 39) {
+        nextButton();
+        console.log("Go Next");
     }
 });
 
@@ -103,6 +108,28 @@ function backButton() {
     document.getElementById('bbox').style.top = datahit.y1[count]+"px";
     document.getElementById('bbox').style.width = datahit.width[count] + "px";
     document.getElementById('bbox').style.height = datahit.height[count] + "px";
+  }
+}
+
+function nextButton() {
+  if (datahit.Approve[count] != "" || datahit.Reject[count] != ""){
+    if (count >= datahit.HITId.length-1) {
+      document.getElementById('previewimage').src = datahit.destinID[count];
+      document.getElementById('category').innerHTML = datahit.label[count];
+      document.getElementById('bbox').style.left = datahit.x1[count]+"px";
+      document.getElementById('bbox').style.top = datahit.y1[count]+"px";
+      document.getElementById('bbox').style.width = datahit.width[count] + "px";
+      document.getElementById('bbox').style.height = datahit.height[count] + "px";
+    } else {
+      count+=1;
+      document.getElementById('number').innerHTML = count; 
+      document.getElementById('previewimage').src = datahit.destinID[count];
+      document.getElementById('category').innerHTML = datahit.label[count];
+      document.getElementById('bbox').style.left = datahit.x1[count]+"px";
+      document.getElementById('bbox').style.top = datahit.y1[count]+"px";
+      document.getElementById('bbox').style.width = datahit.width[count] + "px";
+      document.getElementById('bbox').style.height = datahit.height[count] + "px";
+    }
   }
 }
 
