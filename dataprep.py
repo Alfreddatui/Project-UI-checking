@@ -33,11 +33,13 @@ def uidataprep(csvpath, fpath):
     results.columns = ['oindex','PictureURL','Answers','WorkerId', 'HITid', 'AssignmentId', 'Approve', 'Reject']
     
     temp = results['Answers'].tolist()
+    temp = list(map(lambda t: ''.join(["" if c ==' ' else c for c in t]), temp))
     temp = list(map(lambda t: t[2:-2], temp))
     temp = list(map(lambda t: ''.join([" " if c in sp else c for c in t]), temp))
     temp = list(map(lambda t: t.split(), temp))
     temp2 = []
-    
+# [{"left":86,"top":79,"width":209,"height":349,"label":"woman long sleeve"},{"left":317,"top":80,"width":121,"height":346,"label":"woman long sleeve"}]
+
     for n in temp:
         temp1 = []
         for index in range(1,len(n),2):
@@ -54,7 +56,6 @@ def uidataprep(csvpath, fpath):
     bboxresults = pd.DataFrame(bboxresults)
     results = pd.concat([results, bboxresults], axis = 1, join_axes = [results.index])
     results = results.drop('Answers', axis = 1)
-    
     results.columns = ['oindex','PictureURL','WorkerId','HITid', 'AssignmentId', 'Approve',  'Reject', 'Answers']
     rows = []
     _ = results.apply(lambda row: [rows.append([row['oindex'],row['PictureURL'], row['WorkerId'],row['HITid'],row['AssignmentId'],
@@ -79,14 +80,21 @@ def uidataprep(csvpath, fpath):
     pictureDestination = pd.concat([pictureID, destinID], axis = 1, join_axes = [pictureID.index])
     pictureDestination.columns = ['PictureURL','Destination']
 
-    results3 = pd.merge(results2, pictureDestination, how = 'inner', on = 'PictureURL')
-
+    results3 = results2.merge(pictureDestination, how = 'inner', on = 'PictureURL')
+    count  = 0
+    results3 = results3.drop_duplicates(subset = ['x1', 'y1', 'width', 'height', 'HITid', 'PictureURL'])
+    '''
+    for i in pictureDestination['PictureURL'].tolist():
+        if i in results2['PictureURL'].tolist():
+            count += 1
+    print(count)
+    '''
     return results3
 
 
 url = 'https://cfshopeesg-a.akamaihd.net/file/'
-fpath = r'C:\Users\alfred.datui\Desktop\imageprep\categories\babycoat\pictures'
-csvpath = r'C:\Users\alfred.datui\Desktop\imageprep\categories\babycoat\results\amturk_5_raw.csv'
+fpath = r'C:\Users\alfred.datui\Desktop\imageprep\categories\Woman Long Sleeve\pictures'
+csvpath = r'C:\Users\alfred.datui\Desktop\imageprep\categories\Woman Long Sleeve\results\amturk_7_raw.csv'
 
 results = uidataprep(csvpath, fpath)
-results.to_csv(r'C:\Users\alfred.datui\Desktop\imageprep\categories\babycoat\results\amturk_5_submitted.csv')
+results.to_csv(r'C:\Users\alfred.datui\Desktop\imageprep\categories\Woman Long Sleeve\results\amturk_7_submitted1234.csv')
