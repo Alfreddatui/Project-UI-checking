@@ -18,11 +18,11 @@ var count = 1;
 
 ///////////////////////////////////////////Additional Feature/////////////////////////////////////////////
 document.addEventListener('keydown', function(event) {
-    if(event.keyCode == 13) {
+    if(event.keyCode == 188) {
         acceptButton();
         console.log("Accepting");
     }
-    else if(event.keyCode == 46) {
+    else if(event.keyCode == 190) {
         declineButton();
         console.log("Declining");
     }
