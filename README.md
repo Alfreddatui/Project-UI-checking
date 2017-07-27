@@ -58,7 +58,7 @@ Step 7. After loading the HTML file on your browser, to load the .csv file in to
 
 Step 8. Navigate to imageprep\categories\(category)\results and choose the relevant file (Preprocessed by the Python Script)
 
-Step 9. Click 'Accept' if the bounding box matches the criteria and 'Decline' if it does not (Some shorcuts : Enter=>Accept, delete=> decline, next=> right arrow, back=> Left arrow).
+Step 9. Click 'Accept' if the bounding box matches the criteria and 'Decline' if it does not (Some shorcuts : ","=>Accept, "."=> decline, next=> right arrow, back=> Left arrow, please open the console log to make sure it is correct when you accept and decline ctrl+shift+i-> console).
 
 Step 10. At the last image, The image will not load to another image and the total number which is shown will be maximum.
 
